@@ -1,0 +1,40 @@
+{
+  "name": "@hp/evm-contracts",
+  "version": "1.0.1",
+  "description": "Smart contracts for evm contracts",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "installConfig": {
+    "hoistingLimits": "workspaces"
+  },
+  "exports": {
+    ".": "./dist/index.ts"
+  },
+  "files": [
+    "dist",
+    "out",
+    "src"
+  ],
+  "scripts": {
+    "test": "forge test",
+    "build": "forge build",
+    "deploy": "bash scripts/deploy.sh --verify --broadcast",
+    "deploy:arbitrum": "bash scripts/deploy.sh --network arbitrum --verify --broadcast",
+    "deploy:worldchain": "bash scripts/deploy.sh --network worldchain --verify --broadcast",
+    "deploy:optimism": "bash scripts/deploy.sh --network optimism --verify --broadcast",
+    "deploy:base": "bash scripts/deploy.sh --network base --verify --broadcast",
+    "deploy:all": "bash scripts/deploy.sh --verify --broadcast",
+    "update": "bash scripts/update.sh --verify --broadcast",
+    "update:arbitrum": "bash scripts/update.sh --network arbitrum --verify --broadcast",
+    "update:worldchain": "bash scripts/update.sh --network worldchain --verify --broadcast",
+    "update:optimism": "bash scripts/update.sh --network optimism --verify --broadcast",
+    "update:base": "bash scripts/update.sh --network base --verify --broadcast",
+    "update:all": "bash scripts/update.sh --verify --broadcast"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.3.0",
+    "@openzeppelin/contracts-upgradeable": "^5.3.0"
+  }
+}

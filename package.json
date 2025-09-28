@@ -1,0 +1,33 @@
+{
+  "name": "hp-monorepo",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "packageManager": "yarn@4.6.0",
+  "scripts": {
+    "setup": "turbo setup",
+    "dev": "turbo dev",
+    "migrate": "turbo migrate",
+    "orval": "turbo orval",
+    "lint": "yarn lint",
+    "typegen": "turbo typegen",
+    "type-check": "turbo type-check",
+    "clean": "find . -name 'node_modules' -type d -prune -print -exec rm -rf {} +",
+    "env": "yarn workspace @hp/env",
+    "queue": "yarn workspace @hp/queues",
+    "miniapp": "yarn workspace @hp/miniapp",
+    "api": "yarn workspace @hp/api",
+    "evm-contracts": "yarn workspace @hp/evm-contracts",
+    "database": "yarn workspace @hp/database",
+    "sample-web": "yarn workspace @hp/sample-web"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "turbo": "^2.5.2"
+  }
+}

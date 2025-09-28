@@ -1,0 +1,26 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "hp-sample-web",
+  "main": "worker/index.ts",
+  "compatibility_date": "2025-09-25",
+  "compatibility_flags": ["nodejs_compat"],
+  "account_id": "6377196122dd8a0ce3a9b3ef18fdfdd7",
+  "assets": {
+    "directory": "./dist/client",
+    "not_found_handling": "single-page-application",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  },
+  "env": {
+    "production": {
+      "name": "hp-sample-web-prod",
+      "route": {
+        "pattern": "sample-web.humanpass.world",
+        "zone_name": "humanpass.world",
+        "custom_domain": true
+      }
+    }
+  }
+}

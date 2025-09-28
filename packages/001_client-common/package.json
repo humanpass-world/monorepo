@@ -1,0 +1,26 @@
+{
+  "name": "@hp/client-common",
+  "version": "1.0.0",
+  "description": "Shared client utilities and common functionality",
+  "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "build": "tsc",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@worldcoin/minikit-js": "1.9.6",
+    "@worldcoin/minikit-react": "1.9.7",
+    "typescript": "^5.7.2",
+    "zustand": "^5.0.5"
+  },
+  "peerDependencies": {
+    "@worldcoin/minikit-js": "1.9.6",
+    "@worldcoin/minikit-react": "1.9.7",
+    "zustand": "^5.0.5"
+  },
+  "private": true
+}

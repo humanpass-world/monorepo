@@ -1,0 +1,15 @@
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll,
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html,
+body {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none;
+}

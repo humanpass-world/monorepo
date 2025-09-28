@@ -1,0 +1,37 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "hp-miniapp",
+  "main": "worker/index.ts",
+  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_date": "2025-05-23",
+  "account_id": "6377196122dd8a0ce3a9b3ef18fdfdd7",
+  "assets": {
+    "directory": "./dist/client",
+    "not_found_handling": "single-page-application",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 0.001
+  },
+  "workers_dev": false,
+  "env": {
+    "production": {
+      "name": "hp-miniapp-prod",
+      "route": {
+        "pattern": "app.humanpass.world",
+        "zone_name": "humanpass.world",
+        "custom_domain": true
+      },
+      "observability": {
+        "enabled": true,
+        "head_sampling_rate": 1
+      }
+    }
+  },
+  "placement": { "mode": "smart" }
+}

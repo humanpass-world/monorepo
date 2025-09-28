@@ -1,0 +1,21 @@
+{
+  "name": "hp-checker-web",
+  "main": "worker/index.ts",
+  "compatibility_date": "2025-09-25",
+  "compatibility_flags": ["nodejs_compat"],
+  "account_id": "6377196122dd8a0ce3a9b3ef18fdfdd7",
+  "assets": { "not_found_handling": "single-page-application" },
+  "observability": {
+    "enabled": true
+  },
+  "env": {
+    "production": {
+      "name": "hp-checker-web-prod",
+      "route": {
+        "pattern": "check.humanpass.world",
+        "zone_name": "humanpass.world",
+        "custom_domain": true
+      }
+    }
+  }
+}

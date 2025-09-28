@@ -1,0 +1,19 @@
+{
+  "name": "@hp/env",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "setup": "./scripts/setup.sh",
+    "encrypt": "./scripts/env.sh encrypt",
+    "dev": "./scripts/dev.sh",
+    "generate": "node ./scripts/env.js",
+    "update": "yarn encrypt && yarn generate",
+    "deploy:production": "yarn update && ./scripts/deploy.sh production"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.12",
+    "strip-json-comments": "^5.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}

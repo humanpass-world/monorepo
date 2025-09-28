@@ -1,0 +1,25 @@
+{
+  "name": "@hp/database",
+  "version": "1.0.1",
+  "description": "Humanpass database schema",
+  "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "kit": "dotenv -e .env -- npx drizzle-kit",
+    "kit:production": "dotenv -e .env.production -- npx drizzle-kit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "dotenv-cli": "^8.0.0",
+    "drizzle-kit": "^0.31.1",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.43.1",
+    "postgres": "^3.4.7"
+  },
+  "private": true
+}

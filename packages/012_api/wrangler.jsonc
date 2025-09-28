@@ -1,0 +1,40 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "hp-api",
+	"account_id": "6377196122dd8a0ce3a9b3ef18fdfdd7",
+	"compatibility_flags": ["nodejs_compat"],
+	"compatibility_date": "2025-09-25",
+	"main": "./src/index.ts",
+	"observability": {
+		"enabled": true
+	},
+	"hyperdrive": [
+		{
+			"binding": "HYPERDRIVE",
+			"id": "local"
+		}
+	],
+	"env": {
+		"production": {
+			"name": "hp-api-prod",
+			"route": {
+				"pattern": "api.humanpass.world",
+				"zone_name": "humanpass.world",
+				"custom_domain": true
+			},
+			"placement": {
+				"mode": "smart"
+			},
+			"hyperdrive": [
+				{
+					"binding": "HYPERDRIVE",
+					"id": "f6d840b854fa418da45befaaabbcb0d6"
+				}
+			]
+		}
+	}
+}
